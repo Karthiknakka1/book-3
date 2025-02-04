@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Users</h1>
+
+<div id="users">
+  <% @users.each do |user| %>
+    <%= render user %>
+    <td class="actions">
+      <%= link_to("Show", user_path(user), class: 'action show') %>
+      <%= link_to("Edit", edit_user_path(user), class: 'action edit') %>
+      <%= link_to("Delete", user_path(user), method: :delete, data: { confirm: "Are you sure?" }, class: 'action delete') %>
+    </td>
+  <% end %>
+</div>
+
+<%= link_to "New user", new_user_path %>
